@@ -149,5 +149,4 @@ const quotes = [
         citation,
         year
     },
-    
 ];
