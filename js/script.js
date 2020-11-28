@@ -110,9 +110,7 @@ const quotes = [
       tags: [  ]
   },
   {
-      quote: "In the end, it's not the years i,
-      tags: [  ]n your life that count. It's the life in your years.",
-      tags: [  ],
+      quote: "In the end, it's not the years in your life that count. It's the life in your years.",
       source: 'Abraham Lincoln',
       citation: '',
       year: 0,
