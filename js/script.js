@@ -83,37 +83,53 @@ const quotes = [
   }
 ];
 
+// The 'getRandNum255' is:
+// An Arrow-Function that returns a random number from 0 to 255
+const getRandNum255 = () => {
+    return Math.floor( Math.random() * 256 );
+}
+
+// The 'getRandomRGB' is:
+// An Arrow-Function that calls on 'getRandNum255' to create a random RGB value 
+// and return a template literal rbg( r, g, b) for CSS
+const setRandomRGB = () => {
+    const randomRGB =  `rgb( ${ getRandNum255() }, ${ getRandNum255() }, ${ getRandNum255() })`;
+    document.body.style.backgroundColor = randomRGB;
+}
 
 // The 'getRandomQuote' is:
 // An Arrow-Function that creates a random number depending on the lenght of the 
 // Object Array: quotes, and returns one of those quotes using the generated number as index
 const getRandomQuote = () => {
     const randNum = Math.floor( Math.random() * quotes.length );
-    return quotes[randNum];
+    return quotes[ randNum ];
 };
 
 
 // The 'printQuote' is:
 // An Arrow-Function that creates the final html string we need to project it on to the browser
 // using conditional statements to only print certain parts if the dependancies are in place 
-// and returning the final string
+// and returning the final string into an DOM element to insert it to the HTML, and then finally 
+// calling the 'setRandomRGB' to change the background color.
 const printQuote = () => {
     const randomQuote = getRandomQuote();
     let html = `
-        <p class="quote" >${randomQuote.quote}</p>
-        <p class="source" >${randomQuote.source}
+        <p class="quote" >${ randomQuote.quote }</p>
+        <p class="source" >${ randomQuote.source }
     `;
     if ( randomQuote.citation ) {
-        html += `<span class="citation">${randomQuote.citation}</span>`;
+        html += `<span class="citation" >${ randomQuote.citation }</span>`;
     }
     if ( randomQuote.year ) {
-        html += `<span class="year">${randomQuote.year}</span>`;
+        html += `<span class="year" >${ randomQuote.year }</span>`;
     }
     if ( randomQuote.tags ) {
-        html += `<br><span class="tags">${randomQuote.tags.join(' ')}</span>`;
+        html += `<br><span class="tags" >${ randomQuote.tags.join(' ') }</span>`;
     }
-    html +=`</p>`;
+    html += `</p>`;
+    setRandomRGB();
     document.getElementById('quote-box').innerHTML = html;
+
 };
 
 
@@ -121,8 +137,12 @@ const printQuote = () => {
 // and put in this to initialize it with one of my own quotes
 printQuote();
 
+// The 'setInterval' (from the Window Object) method calls a function or evaluates an expression
+// at specified intervals in milliseconds, takes in 'printQuote' as a callback function in the first
+// parameter, and the intervals between each evaluation, here 3 seconds (3000 ms)
+setInterval( printQuote, 5000 );
 
 // Click Event Listener for the button, calling on the printQuote function
 // Please do not edit this code, thank you.
 
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById( 'load-quote' ).addEventListener( "click", printQuote, false );
