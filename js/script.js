@@ -10,196 +10,103 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
+
+// A quotes array of Quote Objects, that has the properties: quote, source, citation, year and tags
 const quotes = [
   {
-      quote: 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
-      source: 'Nelson Mandela',
-      citation: '',
-      year: 0,
-      tags: [  ]
+      quote: 'Our Deepest Fear Is Not That We Are Inadequate. Our Deepest Fear Is That We Are Powerful Beyond Measure.',
+      source: 'Marianne Williamson',
+      citation: 'A Return to Love: Reflections on the Principles of A Course in Miracles',
+      year: 1992,
+      tags: [ '#motivation', '#confidence', '#life' ]
   },
   {
-      quote: 'The way to get started is to quit talking and begin doing.',
-      source: 'Walt Disney',
-      citation: '',
-      year: 0,
-      tags: [  ]
+      quote: 'It Always Seems Impossible Until It’s Done.',
+      source: 'Pliny the Elder',
+      citation: 'The Natural History of Pliny',
+      year: 1855,
+      tags: [ '#nothingisimpossible', '#believeinyourself', '#motivation' ]
   },
   {
-      quote: 'Your time is limited, so don\'t waste it living someone else\'s life. Don\'t be trapped by dogma – which is living with the results of other people\'s thinking.',
-      source: 'Steve Jobs',
-      citation: '',
-      year: 0,
-      tags: [  ]
+      quote: 'Our Greatest Glory Is Not in Never Falling, But in Rising Every Time We Fall.',
+      source: 'Oliver Goldsmith',
+      citation: 'The Citizen of the World',
+      year: 1762,
+      tags: [ '#riseagain', '#strong', 'motivational' ]
   },
   {
-      quote: "If life was predictable it would cease to be life, and be without flavor.",
-      source: 'Eleanor Roosevelt',
-      citation: '',
-      year: 0,
-      tags: [  ]
+      quote: "Find Out What You Like Doing Best and Get Someone To Pay You for Doing It.",
+      source: 'The Observer',
+      citation: 'Katharine Whitehorn',
+      year: 1975,
+      tags: [ '#passion' ]
   },
   {
-      quote: "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
-      source: 'Oprah Winfrey',
-      citation: '',
+      quote: "If You Seek Revenge You Should Dig Two Graves.",
+      source: 'Japanese proverb',
+      citation: 'The Mikado’s Empire, Book I: History of Japan From 660 B.C. to 1872 A.D.',
       year: 0,
-      tags: [  ]
+      tags: [ '#wise', '#forgiveness' ]
   },
   {
-      quote: "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.",
-      source: 'James Cameron',
-      citation: '',
-      year: 0,
-      tags: [  ]
+      quote: "Tell Me and I Forget; Teach Me and I May Remember; Involve Me and I Learn.",
+      source: 'Xun Kuang',
+      citation: 'Xunzi, by Liu Xiang',
+      year: 818,
+      tags: [ '#teachings', '#philosofical' ]
   },
   {
-      quote: "Life is what happens when you're busy making other plans.",
-      source: 'John Lennon',
-      citation: '',
-      year: 0,
-      tags: [  ]
+      quote: "Better to Light a Candle Than to Curse the Darkness.",
+      source: 'W. L. Watkinson',
+      citation: 'The Invincible Strategy',
+      year: 1907,
+      tags: [ '#wise', '#profound' ]
   },
   {
-      quote: "Even if a river flows with milk, a dog can take in only one lick at a time",
-      source: 'Tamil proverb',
-      citation: '',
-      year: 0,
-      tags: [  ]
+      quote: "Who Wait Until Circumstances Completely Favor His Undertaking Will Never Accomplish Anything.",
+      source: 'John Peter Lange',
+      citation: 'A Commentary on the Holy Scriptures: Critical, Doctrinal, and Homiletical',
+      year: 1868,
+      tags: [ '#initiative', '#opportunistic' ]
   },
   {
-      quote: "Silent gratitude isn't much use to anyone.",
-      source: 'G. B. Stem',
-      citation: '',
-      year: 0,
-      tags: [  ]
+      quote: "People Who Say It Cannot Be Done Should Not Interrupt Those Who Are Doing It.",
+      source: 'Louis F. Post',
+      citation: 'The Public, Number 257',
+      year: 1903,
+      tags: [ '#blockitout', '#belief', '#persistance' ]
   },
   {
-      quote: "Gossip and anger are like drinking poison and expecting someone else to die.",
-      source: 'Unknown',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "Shattered legs may heal in time, but some betrayals fester and poison the soul.",
-      source: 'George R.R. Martin',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "The death clock is ticking slowly in our breast, and each drop of blood measures its time, and our life is a lingering fever.",
-      source: 'Karl Georg Bchner',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "You will face many defeats in life, but never let yourself be defeated.",
-      source: 'Maya Angelou',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
-      source: 'Nelson Mandela',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "In the end, it's not the years in your life that count. It's the life in your years.",
-      source: 'Abraham Lincoln',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose.",
-      source: 'Dr. Seuss',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "Only a life lived for others is a life worthwhile.",
-      source: 'Albert Einstein',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "The purpose of our lives is to be happy.",
-      source: 'Dalai Lama',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "Life is really simple, but we insist on making it complicated.",
-      source: 'Confucius',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "Love the life you live. Live the life you love.",
-      source: 'Bob Marley',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "Success is not final; failure is not fatal: It is the courage to continue that counts.",
-      source: 'Winston S. Churchill',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "Success usually comes to those who are too busy to be looking for it.",
-      source: 'Henry David Thoreau',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "Success is walking from failure to failure with no loss of enthusiasm.",
-      source: 'Winston S. Churchill',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "If you want to achieve excellence, you can get there today. As of this second, quit doing less-than-excellent work.",
-      source: 'Thomas J. Watson',
-      citation: '',
-      year: 0,
-      tags: [  ]
-  },
-  {
-      quote: "Before anything else, preparation is the key to success.",
-      source: 'Alexander Graham Bell',
-      citation: '',
-      year: 0,
-      tags: [  ]
+      quote: "Choose a Job You Love, and You Will Never Have To Work a Day in Your Life.",
+      source: 'Ann Woolfolk',
+      citation: 'Princeton Alumni Weekly, Article Title: Toshiko Takaezu',
+      year: 1982,
+      tags: [ '#inspirational', '#passion', '#dreams' ]
   },
 ];
-
 
 /***
  * `getRandomQuote` function
 ***/
 
-
+// An Arrow-Function that creates a random number depending on the lenght of the 
+// Object Array: quotes, and returns one of those quotes using the generated number as index
+const getRandomQuote = () => {
+    const randNum = Math.floor( Math.random() * quotes.length );
+    return quotes[randNum];
+}
 
 /***
  * `printQuote` function
 ***/
 
-
+const printQuote = () => {
+    const randomQuote = getRandomQuote();
+    let html = `
+        <p class="quote" ></p>
+        <p class="source" ></p>
+    `;
+}
 
 /***
  * click event listener for the print quote button
