@@ -1,17 +1,15 @@
 /******************************************
 Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
+project 1 - A Random Quote Generator, by Andreas Myklebust Skomsøy
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
-/*** 
- * `quotes` array 
-***/
-
-// A quotes array of Quote Objects, that has the properties: quote, source, citation, year and tags
+// The 'quotes' is:
+// An array of Quote Objects, that has the properties: 
+// quote - The quote itself
+// source - The source of which the quote came from
+// citation - From where the quote was published or used, be that a movie, book or article
+// year - The year of origin or as citated
+// tags - Hash-tags to to make the Random Quote Generator more 'hip', or give it an extra 'pop'
 const quotes = [
   {
       quote: 'Our Deepest Fear Is Not That We Are Inadequate. Our Deepest Fear Is That We Are Powerful Beyond Measure.',
@@ -82,35 +80,49 @@ const quotes = [
       citation: 'Princeton Alumni Weekly, Article Title: Toshiko Takaezu',
       year: 1982,
       tags: [ '#inspirational', '#passion', '#dreams' ]
-  },
+  }
 ];
 
-/***
- * `getRandomQuote` function
-***/
 
+// The 'getRandomQuote' is:
 // An Arrow-Function that creates a random number depending on the lenght of the 
 // Object Array: quotes, and returns one of those quotes using the generated number as index
 const getRandomQuote = () => {
     const randNum = Math.floor( Math.random() * quotes.length );
     return quotes[randNum];
-}
+};
 
-/***
- * `printQuote` function
-***/
 
+// The 'printQuote' is:
+// An Arrow-Function that creates the final html string we need to project it on to the browser
+// using conditional statements to only print certain parts if the dependancies are in place 
+// and returning the final string
 const printQuote = () => {
     const randomQuote = getRandomQuote();
     let html = `
-        <p class="quote" ></p>
-        <p class="source" ></p>
+        <p class="quote" >${randomQuote.quote}</p>
+        <p class="source" >${randomQuote.source}
     `;
-}
+    if ( randomQuote.citation ) {
+        html += `<span class="citation">${randomQuote.citation}</span>`;
+    }
+    if ( randomQuote.year ) {
+        html += `<span class="year">${randomQuote.year}</span>`;
+    }
+    if ( randomQuote.tags ) {
+        html += `<br><span class="tags">${randomQuote.tags.join(' ')}</span>`;
+    }
+    html +=`</p>`;
+    document.getElementById('quote-box').innerHTML = html;
+};
 
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
+
+// I removed the initial quote (in HTML) that came with the code, 
+// and put in this to initialize it with one of my own quotes
+printQuote();
+
+
+// Click Event Listener for the button, calling on the printQuote function
+// Please do not edit this code, thank you.
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
