@@ -139,7 +139,7 @@ printQuote();
 
 // The 'setInterval' (from the Window Object) method calls a function or evaluates an expression
 // at specified intervals in milliseconds, takes in 'printQuote' as a callback function in the first
-// parameter, and the intervals between each evaluation, here 3 seconds (3000 ms)
+// parameter, and the intervals between each evaluation, here 5 seconds (5000 ms)
 setInterval( printQuote, 5000 );
 
 // Click Event Listener for the button, calling on the printQuote function
